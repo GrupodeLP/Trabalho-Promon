@@ -119,3 +119,46 @@ public class CategoriaDAO {
         
     }
 }
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package exceptionhandling;
+
+/**
+ *
+ * @author Aluno
+ */
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class ExceptionHandling {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner read = new Scanner(System.in);
+
+        int division;
+        try {
+            System.out.println("enter a number");
+            int number1 = read.nextInt();
+            System.out.println("enter a second number");
+            int number2 = read.nextInt();
+            division = number1 / number2;
+        } catch (ArithmeticException e) {
+            System.out.println("You tried to divide by zero");
+            System.out.println("erro :" + e);
+            division = 0;
+        }
+        catch (InputMismatchException e){
+            System.out.println("you entered the wrong type");
+            System.out.println("error: "+e);
+            division=0;
+        }
+        System.out.println("division: " + division);
+        //ArithmeticException
+        //InputMismatchException
+    }
+
+}
